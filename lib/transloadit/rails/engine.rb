@@ -60,10 +60,10 @@ class Transloadit
       def self.template(name, options = {})
         template = self.configuration['templates'].try(:fetch, name.to_s)
 
-        self.transloadit.assembly(case template
+        self.transloadit.assembly case template
           when String then { :template_id => template }.merge(options)
           when Hash   then template                    .merge(options)
-        end).merge(fields: options[:fields])
+        end
       end
 
       #
