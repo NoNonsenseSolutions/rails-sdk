@@ -63,7 +63,7 @@ class Transloadit
         self.transloadit.assembly case template
           when String then { :template_id => template }.merge(options)
           when Hash   then template                    .merge(options)
-        end
+        end.merge(fields: options[:fields])
       end
 
       #
